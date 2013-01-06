@@ -1,0 +1,395 @@
+<!doctype html>  
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+Remove this if you use the .htaccess -->
+
+<title>Van | UX Design &amp; Illustration</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Van is:  user experience designer, creative director, designer, web designer, illustrator, artist">
+<meta name="author" content="Van Shea Sedita, Van Sedita, @vanshea">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!--To stop Safari on iOS from assuming that your site is 980 pixels wide, you can use a meta element to set the viewport width:-->
+    <meta name="viewport" content="width=device-width" />
+<!--meta element to set the viewport width-->
+<!--Preventing Safari on iOS from increasing text size when the orientation is changed from portrait to landscape is a bit more tricky if you want to do it without completely disabling user zoom (which you do).-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--See CSS BODY tags for 100% fix part 2-->
+<!--Preventing Safari on iOS from increasing text size when the orientation is changed-->
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="css/style.css" />
+    
+
+	<script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="source/jquery.fancybox.js?v=2.0.6"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.0.6" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.2" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.2"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.2" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.2"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.0"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox({
+
+			helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.75
+					}
+				}
+			});
+
+			// Change title type, overlay opening speed and opacity
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.95
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background-color' : '#eee'
+						}
+					}
+				}
+			});
+			
+			// Set custom style, close if clicked, change title type and overlay color
+						$(".fancybox-effects-van").fancybox({
+							wrapCSS    : 'fancybox-custom',
+							closeClick : true,
+							
+			
+							helpers : {
+								title : {
+									type : 'inside'
+								},
+								overlay : {
+									css : {
+										'background-color' : '#eee'
+									}
+								}
+							}
+						});
+			
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+				
+
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+	
+	
+	
+<!--	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+	</style>-->
+	
+	<!--Typekit-->
+	<script type="text/javascript" src="//use.typekit.net/hxc5jhp.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!--Typekit-->
+	
+	<!--chartbeat--><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-13070304-1']);
+	  _gaq.push(['_setDomainName', 'vanshea.com']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+
+
+</head>
+
+<body>
+
+<div id="container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Portfolio</a></li>
+<!--                <li><a href="#">Archives</a></li>-->
+                <li><a style="color:#D23609;" href="#">My History</a></li>
+               <li><a href="http://vanshea.wufoo.com/forms/z7x4a3/" onClick="window.open(this.href,  null, 'height=784, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Contact Van!">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div id="content">
+    <div id="main">
+        <div id="intro">
+            <h1 class="my-name">Van Shea Sedita</h1>
+            <br>
+            <h2 class="my-title">User Experience Designer, Illustrator &amp; Happy Person</h2> 
+            <br>
+            <p class="desktop-only">When I illustrate, I explore my imagination and tell stories. Here are some key points of my story...</p>   
+        </div>
+        
+
+
+        <div id="featured">
+            <a class="fancybox featured" href="images/large/ill_pencil.png" data-fancybox-group="gallery" title="It all began for me when I was introduced to the pencil, my favorite piece of technology! I could make an entire world with the pointy side and wipe it out with the soft side. I was in heaven!"><img src="images/featured/lf-pencil.png" alt="pencil illustration"/></a>
+            
+            <a class="fancybox featured" href="images/large/ill_chat.png" data-fancybox-group="gallery" title="The chat bubble amazed me as a child. Each character in a comic had a personality and tone represented and developed through a series of these small 'story portals' ...I was enthralled."><img src="images/featured/lf-chat.png" alt="The chat bubble illustration"/></a>
+            
+            <a class="fancybox featured" href="images/large/ill_ironman.png" data-fancybox-group="gallery" title="I was first introduced to my favorite comic character, Iron Man, on an episode of <a href='http://www.youtube.com/watch?v=9R2Z32_FhGU'>Spiderman and His Amazing Friends</a>! 'Shellhead' is one of the reasons I love science and gadgets and continue to believe that anything is possible. Thank you Stan Lee!"><img src="images/featured/lf-ironman.png" alt="Iron Man illustration"/></a>
+                       
+            <!--<a class="fancybox featured" href="images/large/ill_book.png" data-fancybox-group="gallery" title="The fact that I could define my own experience broadened my imagintion and helped me to truly appreciate great story telling beyond comic books."><img src="images/featured/lf-book.png" alt="'Choose Your Own Adventure' book series illustration"/></a>-->
+            
+           <!-- <a class="fancybox featured" href="images/large/ill_captain.png" data-fancybox-group="gallery" title="I never liked Captain America. I'm not sure why. I use to take my Captain America doll that came with a parachute and throw him off the roof, then pelt the parachute with rocks till he fell to his death. Sorry Cap."><img src="images/featured/lf-captain.png" alt="Iron Man illustration"/></a>-->
+            
+           <a class="fancybox featured" href="images/large/ill_litho.png" data-fancybox-group="gallery" title="My formal art training began at the awesome Art Student's League in NYC. I took Lithography and spent a very hot summer lifting very heavy stones."><img src="images/featured/lf-litho.png" alt="Lithography illustration"/></a> 
+           
+           <a class="fancybox featured" href="images/large/ill_me-12.png" data-fancybox-group="gallery" title="I was 12. I was at The Art Students League studying figure drawing and anatomy. I was face to face with a nude woman who was not what I expected. I had questions, many questions."><img src="images/featured/lf-me-12.png" alt="'Me at 12 illustration"/></a>
+            
+
+            <a class="fancybox featured" href="images/large/ill_paintbrush.png" data-fancybox-group="gallery" title="Painting was never something I adapted to. The mess and the limitless potential overwhelmed me—I needed more structure than that. Shortly after, I was given my first computer."><img src="images/featured/lf-paintbrush.png" alt="Paintbrush illustration"/></a>           
+            
+            <a class="fancybox featured" href="images/large/ill_win95.png" data-fancybox-group="gallery" title="A Pentium 90, Windows 95 scream machine! Yes indeedy folks! This machine and Win 95 began my love of user interface design. But, the manufacturer, Compaq, had this horrible phone software which not only wouldn't work, but it didn't show all of it's buttons on the GUI."><img src="images/featured/lf-win95.png" alt="Computer illustration"/></a>
+
+<!--            <a class="fancybox featured" href="images/large/ill_carrott.png" data-fancybox-group="gallery" title="I was first introduced to my favorite comic character, Iron Man, on an episode of <a href='http://www.youtube.com/watch?v=9R2Z32_FhGU'>Spiderman and His Amazing Friends</a>! 'Shellhead' is one of the reasons I love gadgets and believe that anything is possible. Thank you Stan Lee!"><img src="images/featured/lf-carrott.png" alt="Iron Man illustration"/></a>-->
+            
+<!--            <a class="fancybox featured" href="images/large/ill_graduation.png" data-fancybox-group="gallery" title="When I graduated!"><img src="images/featured/lf-graduation.png" alt="Iron Man illustration"/></a>-->
+            
+            <a class="fancybox featured" href="images/large/ill_me.png" data-fancybox-group="gallery" title="Today I'm trying to make the world a little better by designing things people need. I am invigorated by wild ideas and fun people. If you've read this far you probably also would like to know that I'm a Gemini and love dogs."><img src="images/featured/lf-me.png" alt="Van illustration"/></a>
+        </div>
+        
+        <section class="primary-mobile-featured">            
+            <a class="fancybox-effects-c thumbs" href="images/large/ill_pencil.png" data-fancybox-group="gallery" title="It all began for me when I was introduced to the pencil, my favorite piece of technology! I could make an entire world with the pointy side and wipe it out with the soft side. I was in heaven!"><img src="images/thumbs/ill_pencil.png" alt="pencil illustration"/></a>
+            
+            <a class="fancybox-effects-c thumbs" href="images/large/ill_chat.png" data-fancybox-group="gallery" title="The chat bubble amazed me as a child. Each character in a comic had a personality and tone represented and developed through a series of these small 'story portals' ..I was enthralled."><img src="images/thumbs/ill_chat.png" alt="The chat bubble illustration"/></a>
+            
+            <a class="fancybox-effects-c thumbs" href="images/large/ill_ironman.png" data-fancybox-group="gallery" title="I was first introduced to my favorite comic character, Iron Man, on an episode of <a href='http://www.youtube.com/watch?v=9R2Z32_FhGU'>Spiderman and His Amazing Friends</a>! 'Shellhead' is one of the reasons I love science and gadgets and continue to believe that anything is possible. Thank you Stan Lee!"><img src="images/thumbs/ill_ironman.png" alt="Iron Man illustration"/></a>
+            
+           <a class="fancybox-effects-c thumbs" href="images/large/ill_litho.png" data-fancybox-group="gallery" title="My formal art training began at the awesome Art Student's Laugue in NYC. I took Lithography and spent a very hot summer lifting very heavy stones."><img src="images/thumbs/ill_litho.png" alt="Lithography illustration"/></a> 
+           
+           <a class="fancybox-effects-c thumbs" href="images/large/ill_me-12.png" data-fancybox-group="gallery" title="I was 12. I was at The Art Students League studying figure drawing and anatomy. I was face to face with a nude woman who was not what I expected. I had questions, many questions."><img src="images/thumbs/ill_me-12.png" alt="'Me at 12 illustration"/></a>
+            
+
+            <a class="fancybox-effects-c thumbs" href="images/large/ill_paintbrush.png" data-fancybox-group="gallery" title="Painting was never something I adapted to. The mess and the limitless potential overwhelmed me—I needed more structure than that. Shortly after, I was given my first computer."><img src="images/thumbs/ill_paintbrush.png" alt="Paintbrush illustration"/></a>           
+            
+            <a class="fancybox-effects-c thumbs" href="images/large/ill_win95.png" data-fancybox-group="gallery" title="A Pentium 90, Windows 95 scream machine! Yes indeedy folks! This machine and Win 95 began my love of user interface design. But, the manufacturer, Compaq, had this horrible phone software which not only wouldn't work, but it didn't show all of it's buttons on the GUI."><img src="images/thumbs/ill_win95.png" alt="Computer illustration"/></a>
+            
+            <a class="fancybox-effects-c thumbs" href="images/large/ill_me.png" data-fancybox-group="gallery" title="Today I'm trying to make the world a little better by designing things people need. I am invigorated by wild ideas and fun people. If you've read this far you probably also would like to know that I'm a Gemini and love dogs."><img src="images/thumbs/ill_me.png" alt="Van illustration"/></a>
+        </section> 
+        
+          
+
+
+        </div>
+    </div><!--main-->
+</div> <!--! end of #container -->
+
+<footer>
+    <div id="footer-holder">
+        <ul><span>Connect with me on the outernets</span>
+            <li class="blog"><a href="http://www.blog.vanshea.com/" target="parent">Personal Blog</a></li>
+            <li class="twitter"><a href="http://twitter.com/vanshea" target="parent">Twitter</a></li>
+            <li class="dribbble"><a href="http://dribbble.com/vanshea" target="parent">Dribbble</a></li>
+            <li class="forrst"><a href="http://forrst.com/people/vanshea/posts" target="parent">Forrst</a></li>
+            <li class="linkedin"><a href="http://www.linkedin.com/in/vanshea/" target="parent">LinkedIn</a></li>
+            <li class="flickr"><a href="http://www.flickr.com/photos/vanshea/" target="parent">Flickr</a></li>
+            <li class="instacanvas"><a href="http://instacanv.as/vanshea" target="parent">Instacanvas</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="myhistory.html">My History</a></li>
+            <li><a href="http://vanshea.wufoo.com/forms/z7x4a3/" onClick="window.open(this.href,  null, 'height=784, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Contact Van!">Contact Me</a></li>
+            
+            <span>You can also download my resume as a <a href="http://www.vanshea.com/docs/Van_Sedita_Resume.doc"> Word</a> or <a href="http://www.vanshea.com/docs/Van_Sedita_Resume.pdf"> PDF</a> file.</span>
+            
+            <!--<li><small>NOTE: This site is best viewed using <a href"http://windows.microsoft.com/en-US/internet-explorer/downloads/ie">Internet Explorer 9</a> or above. Thanks!</small><li>-->
+            
+        </ul>
+     </div>
+</footer>
+
+</body>
+</html>

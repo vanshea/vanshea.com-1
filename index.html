@@ -1,0 +1,372 @@
+<!doctype html>  
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+Remove this if you use the .htaccess -->
+
+<title>Van | UX Design &amp; Illustration</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Van:  user experience designer, creative director, designer, web designer, illustrator, artist">
+<meta name="author" content="Van Shea Sedita, Van Sedita, @vanshea">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!--To stop Safari on iOS from assuming that your site is 980 pixels wide, you can use a meta element to set the viewport width:-->
+    <meta name="viewport" content="width=device-width" />
+<!--meta element to set the viewport width-->
+<!--Preventing Safari on iOS from increasing text size when the orientation is changed from portrait to landscape is a bit more tricky if you want to do it without completely disabling user zoom (which you do).-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--See CSS BODY tags for 100% fix part 2-->
+<!--Preventing Safari on iOS from increasing text size when the orientation is changed-->
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="css/style.css" />
+    
+
+	<script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="source/jquery.fancybox.js?v=2.0.6"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.0.6" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.2" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.2"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.2" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.2"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.0"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay opening speed and opacity
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.95
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background-color' : '#eee'
+						}
+					}
+				}
+			});
+			
+			// Set custom style, close if clicked, change title type and overlay color
+						$(".fancybox-effects-van").fancybox({
+							wrapCSS    : 'fancybox-custom',
+							closeClick : true,
+							
+			
+							helpers : {
+								title : {
+									type : 'inside'
+								},
+								overlay : {
+									css : {
+										'background-color' : '#eee'
+									}
+								}
+							}
+						});
+			
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+				
+
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+	
+	
+	
+<!--	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+	</style>-->
+	
+	<!--Typekit-->
+	<script type="text/javascript" src="//use.typekit.net/hxc5jhp.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!--Typekit-->
+	
+	<!--chartbeat--><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-13070304-1']);
+	  _gaq.push(['_setDomainName', 'vanshea.com']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+
+
+</head>
+
+<body>
+
+<div id="container">
+    <header>
+        <nav>
+            <ul>
+                <li><a <a style="color:#D23609;" href="#">Portfolio</a></li>
+<!--                <li><a href="#">Archives</a></li>-->
+                <li><a href="myhistory.html">My History</a></li>
+                <li><a href="http://vanshea.wufoo.com/forms/z7x4a3/" onClick="window.open(this.href,  null, 'height=784, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Contact Van!">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div id="content">
+    <div id="main">
+        <div id="intro">
+            <h1 class="my-name">Van Shea Sedita</h1>
+            <br>
+            <h2 class="my-title">User Experience Designer, Illustrator &amp; Happy Person</h2> 
+            <br>
+            <p class="desktop-only">I love designing a concept to its fullest. Whether it's contributing to the content strategy or defining the visual design, a well-crafted user experience is what most of my daily efforts are focused on.</p>   
+        </div>
+        
+
+
+        <div id="featured">
+            <a class="fancybox-effects-c featured" href="images/large/ds_getmaid.jpg" title="Product identity, user research, user interface and visual design. See the GetMaid <a href='http://bit.ly/QmoyOo'>case study</a>."><img src="images/featured/lf-getmaid.png" alt="Product re-branding for GetMaid"/></a>
+            
+            <a class="fancybox-effects-c featured" href="images/large/ds_simon.jpg" title="Product re-branding, usability testing, user interface and visual design including CSS/HTML/LESS. See the SiteSimon <a href='http://bit.ly/KPkCGV'>case study</a>."><img src="images/featured/lf-sitesimon.png" alt="Product re-branding for Sitesimon"/></a>
+            
+            <a class="fancybox-effects-c featured" href="images/large/ds_panda.png" title="I quickly redesigned the Parking Panda website and initiated a branding shift. Check out the<a href='http://bit.ly/SPu4dh'> case study</a>."><img src="images/featured/lf-parkingpanda.png" alt="Parking Panda Site"/></a>
+        </div>
+        
+        <section class="primary-mobile-featured">
+           <a class="fancybox-effects-c thumbs" href="images/large/ds_getmaid.jpg" title="Product identity, user research, user interface and visual design. See the GetMaid <a href='http://bit.ly/QmoyOo'>case study</a>."><img src="images/thumbs/ds_getmaid.jpg" alt="Product re-branding for GetMaid"/></a>
+           
+           
+           <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/ds_simon.jpg" title="Product re-branding, CSS, HTML, and LESS, user experience and visual redesign for SiteSimon. Case study <a href='http://bit.ly/KPkCGV'>available here</a>."><img src="images/thumbs/ds_simon.jpg" alt="Product re-branding forSitesimon"/></a>
+            
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/ds_panda.png" title="I quickly redesigned the Parking Panda website and initiated a branding shift. Check out the<a href='http://bit.ly/SPu4dh'> case study</a>."><img src="images/thumbs/ds_panda.png" alt="Parking Panda Case Study"/></a>
+        </section> 
+
+        <section class="primary">
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/cd_athome.jpg" title="I directed the design and co-concepted House Party's first social media event. The purpose <a href='http://www.mediapost.com/publications/article/130507'>of the event</a> was to educate local small businesses on the uses and benefits of social media."> <img src="images/thumbs/cd_athome.jpg" alt="House Party's first social media event"/></a>
+            
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/cd_fob.jpg" title="I directed the design and CSS implementation of the <a href='http://www.falloutboyrock.com'>Fall Out Boy site</a> for Island Def Jam via Fearless Concepts."> <img src="images/thumbs/cd_fob.jpg"/></a>
+            
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/cd_crifdogs_directions.jpg" title="Crif Dogs proposed redesign for Fearless Concepts."> <img src="images/thumbs/cd_crifdogs_directions.jpg" alt="Crif Dogs proposed redesign"/></a>
+            
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/cd_idjtop.jpg" title="The redesign of <a href='http://www.islanddefjam.com'>Island Def Jam's site</a> and top Flash rotator."> <img src="images/thumbs/cd_idjtop.jpg" alt="top of Island Def Jam's homepage"/></a>
+            
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/ds_hpwin7.jpg" title="Windows 7 Launch Party Global Portal for House Party."> <img src="images/thumbs/ds_hpwin7.jpg" alt="Windows 7 Launch Global Portal"/></a>
+            
+            <a class="fancybox-effects-c thumbs" data-fancybox-group="gallery" href="images/large/ds_nem.jpg" title="Logo for an independant rap duo"> <img src="images/thumbs/ds_nem.jpg" alt="Logo for an independant rap duo"  alt="Logo for independant rap artists"/></a>
+        </section>    
+
+
+        </div>
+    </div><!--main-->
+</div> <!--! end of #container -->
+
+<footer>
+    <div id="footer-holder">
+        <ul><span>Connect with me on the outernets</span>
+            <li class="blog"><a href="http://www.blog.vanshea.com/" target="parent">Personal Blog</a></li>
+                        <li class="twitter"><a href="http://twitter.com/vanshea" target="parent">Twitter</a></li>
+                        <li class="dribbble"><a href="http://dribbble.com/vanshea" target="parent">Dribbble</a></li>
+                        <li class="forrst"><a href="http://forrst.com/people/vanshea/posts" target="parent">Forrst</a></li>
+                        <li class="linkedin"><a href="http://www.linkedin.com/in/vanshea/" target="parent">LinkedIn</a></li>
+                        <li class="flickr"><a href="http://www.flickr.com/photos/vanshea/" target="parent">Flickr</a></li>
+                        <li class="instacanvas"><a href="http://instacanv.as/vanshea" target="parent">Instacanvas</a></li>
+                        <li><a href="index.html">Portfolio</a></li>
+                        <li><a href="myhistory.html">My History</a></li>
+                        <li><a href="http://vanshea.wufoo.com/forms/z7x4a3/" onClick="window.open(this.href,  null, 'height=784, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Contact Van!">Contact Me</a></li>
+                        
+                        <span>You can also download my resume as a <a href="http://www.vanshea.com/docs/Van_Sedita_Resume.doc"> Word</a> or <a href="http://www.vanshea.com/docs/Van_Sedita_Resume.pdf"> PDF</a> file.</span>
+            
+<!--                        <li><small>NOTE: This site is constantly evolving, I am currently working on its Internet Explorer 8 compatibility. Thanks!</small><li>-->
+            
+        </ul>
+        
+     </div>
+</footer>
+
+</body>
+</html>

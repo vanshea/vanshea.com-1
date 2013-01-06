@@ -1,0 +1,1209 @@
+/* @group Biolerplate */
+/*
+HTML5 ✰ Boilerplate
+
+style.css contains a reset, font normalization and some base styles.
+
+credit is left where credit is due.
+much inspiration was taken from these projects:
+yui.yahooapis.com/2.8.1/build/base/base.css
+camendesign.com/design/
+praegnanz.de/weblog/htmlcssjs-kickstart
+*/
+/*
+html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+html5doctor.com/html-5-reset-stylesheet/
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+span,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input,
+select {
+  vertical-align: middle; }
+
+/* END RESET CSS */
+/* fonts.css from the YUI Library: developer.yahoo.com/yui/
+Refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
+
+There are three custom edits:
+* remove arial, helvetica from explicit font stack
+* we normalize monospace styles ourselves
+* table font-size is reset in the HTML5 reset above so there is no need to repeat
+*/
+body {
+  font: 13px/1.231 sans-serif;
+  *font-size: small; }
+
+/* hack retained to preserve specificity */
+select,
+input,
+textarea,
+button {
+  font: 99% sans-serif; }
+
+/* normalize monospace sizing
+* en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
+*/
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif; }
+
+/*
+* minimal base styles
+*/
+body,
+select,
+input,
+textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */ }
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+you'll want to define those yourself. */
+h1,
+h2,
+h3,
+h4,
+span,
+h6 {
+  font-weight: bold; }
+
+/* always force a scrollbar in non-IE */
+html {
+  overflow-y: scroll; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover,
+a:active {
+  outline: none; }
+
+a,
+a:active,
+a:visited {
+  color: #607890; }
+
+a:hover {
+  color: #036; }
+
+ul,
+ol {
+  margin-left: 1.8em; }
+
+ol {
+  list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul,
+nav li {
+  margin-left: -1%; }
+
+small {
+  font-size: 85%; }
+
+li small, li small a {
+  color: white;
+  font-size: 100%;
+  text-rendering: optimizeLegibility; }
+
+li small a {
+  background: none; }
+
+strong,
+th {
+  font-weight: bold; }
+
+td,
+td img {
+  vertical-align: top; }
+
+sub {
+  vertical-align: sub;
+  font-size: smaller; }
+
+sup {
+  vertical-align: super;
+  font-size: smaller; }
+
+pre {
+  padding: 15px;
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+textarea {
+  overflow: auto; }
+
+/* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+.ie6 legend,
+.ie7 legend {
+  margin-left: -7px; }
+
+/* thnx ivannikolic! */
+/* align checkboxes, radios, text inputs with their label
+by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+.ie6 input {
+  vertical-align: text-bottom; }
+
+/* hand cursor on clickable input elements */
+label,
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer; }
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */
+button,
+input,
+select,
+textarea {
+  margin: 0; }
+
+/* colors for form validity */
+input:invalid,
+textarea:invalid {
+  border-radius: 1px;
+  -moz-box-shadow: 0px 0px 5px red;
+  -webkit-box-shadow: 0px 0px 5px red;
+  box-shadow: 0px 0px 5px red; }
+
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid {
+  background-color: #f9dcd4; }
+
+/* These selection declarations have to be separate.
+No text-shadow: twitter.com/miketaylr/status/12228805301
+Also: hot pink. */
+::-moz-selection {
+  background: #D23609;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #D23609;
+  color: #fff;
+  text-shadow: none; }
+
+/*  j.mp/webkit-tap-highlight-color */
+a:link {
+  -webkit-tap-highlight-color: #FF5E99; }
+
+/* make buttons play nice in IE:
+www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+  width: auto;
+  overflow: visible; }
+
+/* bicubic resizing for non-native sized IMG:
+code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/*
+* Non-semantic helper classes
+*/
+/* for image replacement */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr; }
+
+/* Hide for both screenreaders and browsers
+css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders
+www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+.visuallyhidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden; }
+
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden; }
+
+.clearfix:after {
+  clear: both; }
+
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix {
+  zoom: 1; }
+
+/* @end */
+/* @group SASS */
+/* @end */
+/* @group Main styles */
+/* Primary Styles
+Author: Van Shea Sedita
+*/
+/*Typekit*/
+.tk-adelle {
+  font-family: "adelle-1", "adelle-2" sans-serif; }
+
+.tk-facitweb {
+  font-family: "facitweb-1","facitweb-2",sans-serif; }
+
+/* End Typekit*/
+body {
+  background-color: #f1f1e6; }
+
+a,
+a:active,
+a:visited {
+  color: #68707a;
+  font-weight: 400;
+  font-family: inherit;
+  /*text-decoration: none;
+  border-bottom: 1px solid #68707a;*/ }
+
+a:hover {
+  color: #3d5a7e; }
+
+h1,
+h2,
+h3,
+h4 {
+  text-decoration: none;
+  text-transform: none;
+  text-align: left;
+  white-space: normal;
+  text-rendering: optimizeLegibility;
+  font-weight: 600; }
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  word-spacing: 80%;
+  line-height: 178%;
+  color: #e44c09; }
+
+h2 {
+  font-size: 2em;
+  word-spacing: 85%;
+  line-height: 122%;
+  color: #5a6470; }
+
+h3 {
+  color: #5a6b8c; }
+
+p {
+  color: #68707a;
+  text-decoration: none;
+  text-transform: none;
+  text-align: left;
+  font-weight: 400;
+  white-space: normal;
+  font-size: 2em;
+  line-height: 1.2em;
+  letter-spacing: 95%;
+  text-rendering: optimizeLegibility; }
+
+h2.my-title {
+  text-shadow: 1px 1px 3px white; }
+
+nav {
+  margin-top: 24px;
+  margin-left: -1%; }
+
+ul {
+  overflow: hidden;
+  list-style-type: none; }
+
+li {
+  height: 65px;
+  float: left;
+  margin-right: 0px;
+  padding: 0 5%;
+  width: auto; }
+
+li:last-child {
+  border-right: none; }
+
+li a {
+  text-decoration: none;
+  color: #68707a;
+  font-size: 1.6em;
+  font-weight: 500;
+  word-spacing: 75%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-variant: normal; }
+
+li a:hover {
+  color: #D23609; }
+
+li.active a {
+  font-weight: bold;
+  color: #333; }
+
+/*end nav*/
+/*Fancybox Overrides*/
+.fancybox-opened .fancybox-title {
+  font-weight: 400;
+  font-family: "facitweb-1","facitweb-2",sans-serif; }
+
+.fancybox-title a {
+  font-family: "facitweb-1","facitweb-2",sans-serif;
+  font-weight: 400; }
+
+.fancybox-title a:hover {
+  font-weight: 400;
+  text-decoration: none; }
+
+/*End Fancybox Overrides*/
+#featured h2 {
+  margin-left: 4%;
+  margin-bottom: 24px; }
+
+section h2 {
+  margin-left: 3%;
+  margin-bottom: 24px; }
+
+footer {
+  background-image: url(../images/striped_lens_@2X.png) repeat; }
+
+footer #footer-holder span {
+  display: inline-block;
+  line-height: 130%;
+  color: #fff;
+  margin-bottom: 32px;
+  font-size: 1.1em;
+  width: auto; }
+
+/* @end */
+/* @end */
+/* @group Media Styles */
+/*
+* Media queries for responsive design
+* These follow after primary styles so they will successfully override.
+*/
+/*@media all and (orientation:portrait) {
+/* Style adjustments for portrait mode goes here *!/
+
+}*/
+/*@media all and (orientation:landscape) {
+/* Style adjustments for landscape mode goes here *!/
+
+}*/
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
+Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+/*@media screen and (max-device-width: 480px) {
+
+
+/* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+j.mp/textsizeadjust
+html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } *!/
+}*/
+/* @media Queries
+
+FOLDING FLUID GRID
+< 767px			- 1-Column Fluid Grid
+768px - 1023px	- 2-Column Fluid Grid
+> 1024px			- 3-Column Fluid Grid
+Change widths as necessary
+------------------------------------------- */
+/* MOBILE PORTRAIT */
+@media only screen and (min-width: 320px) {
+  header nav {
+    margin-left: 8%;
+    margin-right: 8%; }
+
+  #container {
+    width: 100%; }
+
+  #content {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: block; }
+
+  #main {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    display: block; }
+
+  #intro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: auto;
+    margin-bottom: 12px; }
+
+  /*focused changes*/
+  h1 {
+    font-size: 2.6em;
+    font-weight: 700;
+    word-spacing: 80%;
+    line-height: 120%;
+    color: #e44c09; }
+
+  h2 {
+    font-size: 1.8em;
+    word-spacing: 85%;
+    line-height: 122%;
+    color: #5a6470; }
+
+  h3 {
+    color: #5a6b8c; }
+
+  nav ul, nav li {
+    margin-left: 6%; }
+
+  li {
+    height: 45px;
+    float: left;
+    margin-right: 0px;
+    padding: 0 4%;
+    width: auto; }
+
+  li a {
+    font-size: 1.4em; }
+
+  .desktop-only {
+    display: none; }
+
+  /*end focused changes*/
+  #featured {
+    display: none; }
+
+  #content .primary-mobile-featured {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: inherit; }
+
+  #content .primary-mobile-featured img {
+    border: 1px solid #838282; }
+
+  #content .primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: inherit; }
+
+  #content a.featured img {
+    opacity: .8;
+    border: 1px solid #838282; }
+
+  #content a.featured img:hover {
+    opacity: 1;
+    border: 1px solid #838282;
+    -moz-box-shadow: 0 4px 4px #d1cfcf;
+    -webkit-box-shadow: 0 4px 4px #d1cfcf;
+    box-shadow: 0 2px 4px 1px #d1cfcf;
+    background-color: #f8f8f0; }
+
+  /* No need, width of .primary was decreased #content .thumbs:first-child{
+  margin-left: 2.5%;
+  opacity: .8;
+  }*/
+  #content .thumbs {
+    display: inline-block;
+    margin-left: 1%;
+    opacity: .9;
+    border: 8px solid #f1f1e6;
+    margin-bottom: 10px; }
+
+  #content .thumbs:hover {
+    opacity: 1;
+    border: 8px solid #e7e7dd;
+    box-shadow: 0 3px 3px #9e9a9a; }
+
+  #featured img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    max-width: 100%;
+    /*height: 95%;
+    max-height: 100%; Creates painful height on mobile*/
+    margin-bottom: 25px; }
+
+  #content .primary-mobile-featured,
+  #content .primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    width: 90%;
+    height: inherit; }
+
+  #content .primary-mobile-featured {
+    margin-bottom: 5px;
+    /*border-bottom: 1px solid #333;*/ }
+
+  footer {
+    height: auto;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
+    width: 100%;
+    background: #E44C09;
+    border-top: 50px solid #f9dcd4; }
+
+  footer #footer-holder {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    width: 90%;
+    height: auto;
+    overflow: visible;
+    padding-left: 1%;
+    padding-top: 20px; }
+
+  footer #footer-holder a {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px;
+    text-decoration: none;
+    background-color: #E44C09;
+    line-height: 76%;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1.4em; }
+
+  footer #footer-holder a:hover {
+    background-color: #D23609;
+    border-bottom: 3px solid white; }
+
+  footer #footer-holder span {
+    display: inline-block;
+    line-height: 130%;
+    color: #fff;
+    margin-bottom: 32px;
+    font-size: 1.4em;
+    width: auto; }
+
+  footer #footer-holder span a {
+    display: inline-block;
+    padding: 6px 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 130%;
+    font-weight: 600; }
+
+  footer #footer-holder span a:hover {
+    background-color: #D23609;
+    border-bottom: 2px solid white;
+    color: #fff; }
+
+  footer ul, footer ol {
+    padding-left: 2em;
+    margin-left: 0em; }
+
+  footer #footer-holder ul {
+    margin-left: 30px; }
+
+  footer #footer-holder ul li {
+    margin: 0;
+    padding: 0;
+    height: 65px;
+    width: 200px;
+    display: box; }
+
+  footer #footer-holder li.dribbble {
+    background: url("img/icons/v3-square_dribbble.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.blog {
+    background: url("img/icons/v3-square_blog.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.email {
+    background: url("img/icons/v3-square_email.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.twitter {
+    background: url("img/icons/v3-square_twitter.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.flickr {
+    background: url("img/icons/v3-square_flickr.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.linkedin {
+    background: url("img/icons/v3-square_linkedin.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.zerply {
+    background: url("img/icons/v3-square_zerply.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.forrst {
+    background: url("img/icons/v3-square_forrst.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.instacanvas {
+    background: url("img/icons/v3-square_instacanvas.png") no-repeat 0 4px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer ul, footer ol {
+    padding-left: 2em;
+    margin-left: 0em; }
+
+  footer #footer-holder ul {
+    margin-left: 30px; }
+
+  footer #footer-holder ul li {
+    margin: 0;
+    padding: 0;
+    height: 65px;
+    width: 200px;
+    display: box; } }
+/* MOBILE LANDSCAPE */
+/*@media only screen and (min-width: 480px) {
+
+
+/* SMALL TABLET */
+@media only screen and (min-width: 600px) {
+  nav ul, nav li {
+    margin-left: 5%; }
+
+  #container {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 90%; }
+
+  header {
+    max-width: 100%;
+    height: 36px; }
+
+  header nav {
+    margin-left: 10%;
+    margin-right: 17%; }
+
+  #content {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: block; }
+
+  #main {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    display: block; }
+
+  #intro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: auto;
+    margin-bottom: 36px; }
+
+  .desktop-only {
+    display: inherit; }
+
+  #content .primary-mobile-featured {
+    display: none; }
+
+  #content .thumbs {
+    display: inline-block;
+    margin-left: 2%;
+    /*      margin-bottom: 20px;*/
+    opacity: .9;
+    border: 8px solid #f1f1e6;
+    margin-bottom: 10px; }
+
+  #featured {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: inherit; }
+
+  #featured img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    max-width: 100%;
+    height: 95%;
+    max-height: 100%;
+    margin-bottom: 50px; }
+
+  #content .primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 64px;
+    width: 90%;
+    height: inherit; }
+
+  footer #footer-holder {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    width: 70%;
+    height: auto;
+    overflow: visible;
+    padding-left: 0;
+    padding-top: 20px;
+    /*      background-color: black;*/ }
+
+  footer #footer-holder span {
+    display: inline-block;
+    line-height: 130%;
+    color: #fff;
+    margin-bottom: 32px;
+    font-size: 1.4em;
+    width: 400px;
+    /*Hack to prevent second column from dropping above h5*/ } }
+/* TABLET/NETBOOK */
+/*@media only screen and (min-width: 768px) {
+
+body {
+
+}
+
+
+
+}*/
+/* LANDSCAPE TABLET/NETBOOK/LAPTOP */
+@media only screen and (min-width: 800px) {
+  nav ul, nav li {
+    margin-left: 5%; }
+
+  #container {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 90%; }
+
+  header {
+    max-width: 100%;
+    height: 36px; }
+
+  header nav {
+    margin-left: 10%;
+    margin-right: 17%; }
+
+  #content {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: block; }
+
+  #main {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    display: block; }
+
+  #intro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: auto;
+    margin-bottom: 36px; }
+
+  .desktop-only {
+    display: inherit; }
+
+  #content .primary-mobile-featured {
+    display: none; }
+
+  #content .primary-mobile-featured img {
+    border: none; }
+
+  #content .thumbs {
+    display: inline-block;
+    margin-left: 2%;
+    /*      margin-bottom: 20px;*/
+    opacity: .9;
+    border: 8px solid #f1f1e6;
+    margin-bottom: 10px; }
+
+  #featured {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: inherit; }
+
+  #featured img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    max-width: 100%;
+    height: 95%;
+    max-height: 100%;
+    margin-bottom: 50px; }
+
+  #content .primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 64px;
+    width: 90%;
+    height: inherit; }
+
+  footer {
+    height: auto;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
+    width: 100%;
+    background: url(img/art/van-signature.png) no-repeat 250px 20px #e44c09; }
+
+  footer #footer-holder {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    width: 30%;
+    height: auto;
+    overflow: visible;
+    padding-left: 60%;
+    padding-top: 20px;
+    /*      background-color: black;*/ }
+
+  footer #footer-holder a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1.4em;
+    background-color: #E44C09;
+    padding: 8px 6px;
+    border-radius: 0px; }
+
+  footer #footer-holder a:hover {
+    background-color: #D23609;
+    border-bottom: 3px solid white; }
+
+  footer #footer-holder span {
+    display: inline-block;
+    line-height: 130%;
+    color: #fff;
+    margin-bottom: 32px;
+    font-size: 1.4em;
+    width: auto; }
+
+  footer #footer-holder span a {
+    font-size: 1em; }
+
+  footer #footer-holder span a:hover {
+    background-color: #D23609;
+    border-bottom: 2px solid white;
+    color: #fff; }
+
+  footer ul, footer ol {
+    padding-left: 2em;
+    margin-left: 0em; }
+
+  footer #footer-holder ul {
+    margin-left: 30px; }
+
+  footer #footer-holder ul li {
+    margin: 0;
+    padding: 0;
+    height: 65px;
+    width: 200px;
+    display: box; }
+
+  footer #footer-holder li.dribbble {
+    background: url("img/icons/v3-square_dribbble.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.blog {
+    background: url("img/icons/v3-square_blog.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.email {
+    background: url("img/icons/v3-square_email.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.twitter {
+    background: url("img/icons/v3-square_twitter.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.flickr {
+    background: url("img/icons/v3-square_flickr.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.linkedin {
+    background: url("img/icons/v3-square_linkedin.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.zerply {
+    background: url("img/icons/v3-square_zerply.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.forrst {
+    background: url("img/icons/v3-square_forrst.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; }
+
+  footer #footer-holder li.instacanvas {
+    background: url("img/icons/v3-square_instacanvas.png") no-repeat 0 2px;
+    padding-left: 38px;
+    margin-left: 6px; } }
+/*@media only screen and (min-width: 1280px) {
+
+/* DESKTOP *!/
+
+body {
+
+}
+
+
+
+}*/
+/* WIDESCREEN */
+/* Increased body size for legibility */
+/*@media only screen and (min-width: 1400px) {
+
+
+
+/* 18.5px / 28px *!/
+
+}*/
+/*
+* print styles
+* inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
+*/
+@media print {
+  * {
+    background: transparent !important;
+    color: #444444 !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    color: #444444 !important;
+    text-decoration: underline; }
+
+  a:after {
+    content: " (" attr(href) ")"; }
+
+  abbr:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after {
+    content: ""; }
+
+  /* Don't show links for images */
+  pre,
+  blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+/* @end */
